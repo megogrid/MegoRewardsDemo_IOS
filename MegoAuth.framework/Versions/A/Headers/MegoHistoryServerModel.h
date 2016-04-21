@@ -1,10 +1,9 @@
 //
-//  MeWardHistoryServerModel.h
-//  MigitalStoreSDK
+//  Created by David on 7/13/15.
 //
-//  Created by Rishi on 7/13/15.
-//  Copyright (c) 2015 migital. All rights reserved.
-//
+
+
+/// @cond MegoHistoryServerModel.h;
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -13,16 +12,16 @@
 
 @protocol MegoServerDataHandller
 @required
--(void)ServiceSuccessHandller:(NSData*)Response;
--(void)ServieFailedHandller:(NSString*)ErrorDescription;
+-(void)serviceSuccessHandller:(NSData*)Response;
+-(void)servieFailedHandller:(NSString*)ErrorDescription;
 -(void)getImage:(UIImage*)DownloadedImage;
--(void)CoinUpdated:(NSDictionary*)Response;
--(void)ConfigHandller:(NSDictionary*)Response;
--(void)Authenticated:(NSString*)tokenKey;
--(void)AuthenticationServiceSuccessHandller;
--(void)RecivegiftHandler:(NSDictionary*)Response;
--(void)SendgiftHandler:(NSDictionary*)Response;
--(void)NotifyActionHandler:(NSDictionary*)Response;
+-(void)coinUpdated:(NSDictionary*)Response;
+-(void)configHandller:(NSDictionary*)Response;
+-(void)authenticated:(NSString*)tokenKey;
+-(void)authenticationServiceSuccessHandller;
+-(void)recivegiftHandler:(NSDictionary*)Response;
+-(void)sendgiftHandler:(NSDictionary*)Response;
+-(void)notifyActionHandler:(NSDictionary*)Response;
 @end
 
 /*!
@@ -39,45 +38,45 @@
 }
 
 @property (strong, nonatomic) id <MegoServerDataHandller> _delegate;
-@property(nonatomic,strong)NSString *AppID;
-@property(nonatomic,strong)NSString *AppSecrate;
-@property(nonatomic,strong)NSString *DeveloperID;
-@property(nonatomic,strong)NSString *ServerPath;
-@property(nonatomic,strong)NSString *AuthenticationServerPath;
+@property(nonatomic,strong)NSString *appID;
+@property(nonatomic,strong)NSString *appSecrate;
+@property(nonatomic,strong)NSString *developerID;
+@property(nonatomic,strong)NSString *serverPath;
+@property(nonatomic,strong)NSString *authenticationServerPath;
 @property(nonatomic,strong) NSString *devicetoken;
 @property(nonatomic,strong)NSString  *campname;
-@property(nonatomic,strong)NSString *MinGiftValue;
-@property(nonatomic)int IsAllowGifting;
-@property(nonatomic,strong)NSString *MewardID;
-@property(nonatomic,strong)NSString *AppTokenKey;
-@property(nonatomic,strong)NSString *AppInstallationDate;
-@property(nonatomic,strong)NSString *AppDataSavedKey;
-@property(nonatomic,strong)NSString *MewardCoinblanaceKey;
+@property(nonatomic,strong)NSString *minGiftValue;
+@property(nonatomic)int isAllowGifting;
+@property(nonatomic,strong)NSString *mewardID;
+@property(nonatomic,strong)NSString *appTokenKey;
+@property(nonatomic,strong)NSString *appInstallationDate;
+@property(nonatomic,strong)NSString *appDataSavedKey;
+@property(nonatomic,strong)NSString *mewardCoinblanaceKey;
 
 
 
 
--(void)FetchCampaigns;
--(void)SingleImageDownloadService:(NSString*)ImageUrl;
--(NSMutableArray*)ParseJsonToInstallShareView:(NSData*)data;
--(void)FetchCreditsToPurchase;
--(NSString*)GetRemainingCoinBalance;
--(void)SaveandUpdateCoinBalance;
--(void)GetDataFromLocalBundle :(NSString*)File;
--(void)FetchEarnedHistory;
--(void)FetchReadeamPointsDetails;
--(void)SaveRemainingCoin:(NSString*)UsersCoinBalance;
--(void)GetPurchasableCoinList;
--(void)UpdateCointoServer:(NSString*)PackageId CampaignId:(NSString*)CampaignId Coins:(NSString*)Coins type:(NSString*)type  type1:(NSString*)type1;
--(void)InitializeMewardConfig;
--(void)SendGift:(NSString*)EmailId CreditsPoints:(NSString*)CreditsPoints;
--(void)ReceiveGift:(NSString*)promoCode;
--(void)NotifyAction:(NSString*)eventId :(NSDictionary*)DicConditions;
--(void)GetCreditBalance;
--(NSMutableArray*)ParseJsonEarnedHistoryView:(NSData*)data;
--(NSMutableArray*)ParseJsonBuyView:(NSData*)data;
--(NSMutableArray*)ParseReadeamedPointsView:(NSData*)data;
-+(void)NotifyInstallRefferal:(NSString*)RefferalDetails;
+-(void)fetchCampaigns;
+-(void)singleImageDownloadService:(NSString*)ImageUrl;
+-(NSMutableArray*)parseJsonToInstallShareView:(NSData*)data;
+-(void)fetchCreditsToPurchase;
+-(NSString*)getRemainingCoinBalance;
+-(void)saveandUpdateCoinBalance;
+-(void)getDataFromLocalBundle :(NSString*)File;
+-(void)fetchEarnedHistory;
+-(void)fetchReadeamPointsDetails;
+-(void)saveRemainingCoin:(NSString*)UsersCoinBalance;
+-(void)getPurchasableCoinList;
+-(void)updateCointoServer:(NSString*)PackageId CampaignId:(NSString*)CampaignId Coins:(NSString*)Coins type:(NSString*)type  type1:(NSString*)type1;
+-(void)initializeMewardConfig;
+-(void)sendGift:(NSString*)EmailId CreditsPoints:(NSString*)CreditsPoints;
+-(void)receiveGift:(NSString*)promoCode;
+-(void)notifyAction:(NSString*)eventId :(NSDictionary*)DicConditions;
+-(void)getCreditBalance;
+-(NSMutableArray*)parseJsonEarnedHistoryView:(NSData*)data;
+-(NSMutableArray*)parseJsonBuyView:(NSData*)data;
+-(NSMutableArray*)parseReadeamedPointsView:(NSData*)data;
++(void)notifyInstallRefferal:(NSString*)RefferalDetails;
 
 +(UIImage*)getImageFromBundle:(NSString*)imageName;
 
@@ -85,12 +84,13 @@
 
 
 
--(void)GetCampaigns;
--(void)GetCampaignsForUser;
--(void)AppDataParser:(NSDictionary*)Json;
--(void)IntializeSDK;
+-(void)getCampaigns;
+-(void)getCampaignsForUser;
+-(void)appDataParser:(NSDictionary*)Json;
+-(void)intializeSDK;
 
 
 
 
 @end
+/// @endcond

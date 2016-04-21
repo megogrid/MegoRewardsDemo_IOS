@@ -1,44 +1,38 @@
+
+//  Created by David on 7/13/15.
 //
-//  Historyclass.h
-//  MigitalStoreSDK
-//
-//  Created by Shalu on 7/13/15.
-//  Copyright (c) 2015 migital. All rights reserved.
-//
+
+
+
+/// @cond MegoHistoryclasss.h;
 
 #import <UIKit/UIKit.h>
 
+@protocol historyFailedDelegate <NSObject>
 
+@required
 
+-(void)HistoryFailedHandller:(NSError*)ErrorDescription;
 
-
-/*!
- @class         MewardHistoryclasss
- @brief         The ViewController class
- @discussion    This class is designed and implemented for history of purchase Campaigns  .
- @superclass    SuperClass: UIViewController\n
- @classdesign   No special design is applied here.
- @helps         It helps no other classes.
- @helper        NO helper exists for this class.
- */
-
+@end
 
 @interface MegoHistoryclasss : UIViewController
 {
     UIView               *MainView;
    
-    NSMutableArray       *RequestParamArray;
-    NSMutableArray       *TabArray;
-    NSMutableArray       *ThemeDataArray;
+    NSMutableArray       *requestParamArray;
+    NSMutableArray       *tabArray;
+    NSMutableArray       *themeDataArray;
     CGRect               collectionRect;
-    UICollectionView     *ThemeCollectionView;
+    UICollectionView     *themeCollectionView;
     UICollectionViewFlowLayout *layout;
     NSString              *myimage;
-    NSMutableArray        *Buttonimage;
-    UIImageView           *Header;
+    NSMutableArray        *buttonimage;
+    UIImageView           *header;
     UIView                *myview;
    
 }
+@property (strong, nonatomic) id <historyFailedDelegate> delegate;
 
 /*!
  @brief this method is used for fetch Campaigns history list.
@@ -62,10 +56,10 @@
 
 @property(nonatomic,strong)NSString *myName;
 @property(nonatomic,strong)NSString*colorString;
-
 @property(nonatomic,strong)UIImage *myImage;
 @property(nonatomic)int myThemeType;
-@property(nonatomic,strong)NSMutableArray *TableImages;
-@property(nonatomic,strong)NSMutableArray *Buttonimage;
--(void)GetHeader:(NSString *)GetCreditvalue;
+@property(nonatomic,strong)NSMutableArray *tableImages;
+@property(nonatomic,strong)NSMutableArray *buttonimage;
+-(void)GetHeader:(NSString *)getCreditvalue;
 @end
+/// @endcond
