@@ -51,7 +51,7 @@
     if( [[NSUserDefaults standardUserDefaults] objectForKey:@"MewoCredentials"] ==nil)
     {
         auth =[[MegoAuthenticate alloc]init];
-        [auth Intialize];
+        [auth initializeMego];
     }
     else
     {
